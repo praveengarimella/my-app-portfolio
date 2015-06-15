@@ -43,11 +43,12 @@ public class MyAppPortfolio extends ActionBarActivity {
     public void showAppShortDesc(View view) {
         Context context = getApplicationContext();
 
+        // get button and create message for toast
         Button b = (Button)view;
         CharSequence text = "This button will launch my " + b.getText().toString() + "!";
 
+        // create toast and show
         int duration = Toast.LENGTH_SHORT;
-
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
