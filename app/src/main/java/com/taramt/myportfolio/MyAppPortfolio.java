@@ -1,9 +1,13 @@
 package com.taramt.myportfolio;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MyAppPortfolio extends ActionBarActivity {
@@ -34,5 +38,17 @@ public class MyAppPortfolio extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showAppShortDesc(View view) {
+        Context context = getApplicationContext();
+
+        Button b = (Button)view;
+        CharSequence text = "This button will launch my " + b.getText().toString() + "!";
+
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }
